@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="vehicle" default="X1" />
+  <!-- Odometry topic to listen to -->
+  <arg name="odomTopic" default="/Base/neighbors/$(arg vehicle)/odometry" />
+  <!-- Frame to publish -->
+  <arg name="newFrame" default="$(arg vehicle)_frame" />
+  <!-- Frame to translate from -->
+  <arg name="orgFrame" default="world" />
+
+  <node name="odom_to_tf_$(arg vehicle)" pkg="odom_to_tf" type="odom_to_tf" output="screen">
+    <param name="odomTopic" value="$(arg odomTopic)" />
+    <param name="newFrame" value="$(arg newFrame)" />
+    <param name="orgFrame" value="$(arg orgFrame)" />
+  </node>
+</launch>

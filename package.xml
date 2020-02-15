@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>odom_to_tf</name>
+  <version>0.1.0</version>
+  <description>The odom_to_tf package</description>
+
+  <maintainer email="dan.riley@colorado.edu">Dan Riley</maintainer>
+
+  <license>TODO</license>
+
+  <url type="website">https://www.github.com/dan-riley/odom_to_tf</url>
+
+	<author email="dan.riley@colorado.edu">Dan Riley</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>roscpp</build_depend>
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>tf</build_depend>
+
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>nav_msgs</build_export_depend>
+  <build_export_depend>tf</build_export_depend>
+
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>tf</exec_depend>
+
+  <export>
+  </export>
+</package>

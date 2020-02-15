@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<launch>
+  <include file="$(find odom_to_tf)/launch/odom_to_tf.launch">
+    <arg name="vehicle" value="X1" />
+  </include>
+
+  <include file="$(find odom_to_tf)/launch/odom_to_tf.launch">
+    <arg name="vehicle" value="X2" />
+  </include>
+</launch>

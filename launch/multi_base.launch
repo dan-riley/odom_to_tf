@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<launch>
+  <include file="$(find odom_to_tf)/launch/odom_to_tf.launch">
+    <arg name="vehicle" value="H01" />
+  </include>
+
+  <!-- <include file="$(find odom_to_tf)/launch/odom_to_tf.launch"> -->
+  <!--   <arg name="vehicle" value="H02" /> -->
+  <!-- </include> -->
+  <!--  -->
+  <!-- <include file="$(find odom_to_tf)/launch/odom_to_tf.launch"> -->
+  <!--   <arg name="vehicle" value="H03" /> -->
+  <!-- </include> -->
+
+  <include file="$(find odom_to_tf)/launch/odom_to_tf.launch">
+    <arg name="vehicle" value="T01" />
+  </include>
+
+  <!-- <include file="$(find odom_to_tf)/launch/odom_to_tf.launch"> -->
+  <!--   <arg name="vehicle" value="T02" /> -->
+  <!-- </include> -->
+
+  <include file="$(find odom_to_tf)/launch/odom_to_tf.launch">
+    <arg name="vehicle" value="L01" />
+  </include>
+
+  <include file="$(find odom_to_tf)/launch/odom_to_tf.launch">
+    <arg name="vehicle" value="A01" />
+  </include>
+</launch>
