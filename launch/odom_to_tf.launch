@@ -4,7 +4,7 @@
   <!-- Odometry topic to listen to -->
   <arg name="odomTopic" default="/Base/neighbors/$(arg vehicle)/odometry" />
   <!-- Frame to publish -->
-  <arg name="newFrame" default="$(arg vehicle)_frame" />
+  <arg name="newFrame" default="$(arg vehicle)_base/base_link" />
   <!-- Frame to translate from -->
   <arg name="orgFrame" default="world" />
 
