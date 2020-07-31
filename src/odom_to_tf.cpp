@@ -29,7 +29,7 @@ int main(int argc, char** argv) {
 
   std::string odomTopic;
   nh.param<std::string>("odomTopic", odomTopic, "/Base/neighbors/H01/odometry");
-  nh.param<std::string>("newFrame", newFrame, "H01_frame");
+  nh.param<std::string>("newFrame", newFrame, "H01_base/base_link");
   nh.param<std::string>("orgFrame", orgFrame, "world");
   ros::Subscriber sub_odom = nh.subscribe(odomTopic, 10, &odomCallback);
 
