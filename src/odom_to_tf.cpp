@@ -6,17 +6,21 @@ std::string newFrame;
 std::string orgFrame;
 
 void odomCallback(const nav_msgs::OdometryPtr& msg) {
-  static tf::TransformBroadcaster br;
-  tf::Transform transform;
-  transform.setOrigin(tf::Vector3(msg->pose.pose.position.x,
-                                  msg->pose.pose.position.y,
-                                  msg->pose.pose.position.z));
-  tf::Quaternion q = tf::Quaternion(msg->pose.pose.orientation.x,
-           msg->pose.pose.orientation.y,
-           msg->pose.pose.orientation.z,
-           msg->pose.pose.orientation.w);
-  transform.setRotation(q);
-  br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), orgFrame, newFrame));
+  if ((msg->pose.pose.position.x != 0) &&
+      (msg->pose.pose.position.y != 0) &&
+      (msg->pose.pose.position.z != 0)) {
+    static tf::TransformBroadcaster br;
+    tf::Transform transform;
+    transform.setOrigin(tf::Vector3(msg->pose.pose.position.x,
+                                    msg->pose.pose.position.y,
+                                    msg->pose.pose.position.z));
+    tf::Quaternion q = tf::Quaternion(msg->pose.pose.orientation.x,
+             msg->pose.pose.orientation.y,
+             msg->pose.pose.orientation.z,
+             msg->pose.pose.orientation.w);
+    transform.setRotation(q);
+    br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), orgFrame, newFrame));
+  }
 }
 
 int main(int argc, char** argv) {
